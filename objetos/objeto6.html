@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+  <h1>Exibir Pessoas</h1>
+  
+  <div id="resultado"></div>
+
+  <script>
+  
+    var pessoa1 = {
+      nome: "João",
+      idade: 25
+    };
+
+    var pessoa2 = {
+      nome: "Maria",
+      idade: 30
+    };
+
+    var pessoa3 = {
+      nome: "Pedro",
+      idade: 22
+    };
+
+   
+    var pessoas = [pessoa1, pessoa2, pessoa3];
+
+   
+    var resultadoDiv = document.getElementById("resultado");
+
+    for (var i = 0; i < pessoas.length; i++) {
+      var pessoa = pessoas[i];
+      var infoPessoa = "Nome: " + pessoa.nome + ", Idade: " + pessoa.idade;
+      var infoPessoaElement = document.createElement("p");
+      infoPessoaElement.textContent = infoPessoa;
+      resultadoDiv.appendChild(infoPessoaElement);
+    }
+  </script>
+</body>
+</html>

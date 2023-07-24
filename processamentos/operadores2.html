@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+
+<form id="formulario">
+  Valor 1: <input type="number" id="valor1Input"><br>
+  Valor 2: <input type="number" id="valor2Input"><br>
+  <input type="submit" value="Calcular">
+</form>
+
+<script>
+  document.getElementById("formulario").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var valor1 = parseInt(document.getElementById("valor1Input").value);
+    var valor2 = parseInt(document.getElementById("valor2Input").value);
+
+    var potenciacao = Math.pow(valor1, valor2);
+    var modulo = valor1 % valor2;
+
+    document.write("Potenciação: " + potenciacao + "<br>");
+    document.write("Módulo: " + modulo + "<br>");
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+  <script>
+    function calcularSoma() {
+      var vendas2021 = [];
+      var vendas2022 = [];
+
+      
+      for (var i = 0; i < 12; i++) {
+        var venda2021 = parseFloat(document.getElementById("venda2021-" + i).value);
+        vendas2021.push(venda2021);
+      }
+
+      
+      for (var i = 0; i < 12; i++) {
+        var venda2022 = parseFloat(document.getElementById("venda2022-" + i).value);
+        vendas2022.push(venda2022);
+      }
+
+      
+      var somaVendas = [];
+      for (var i = 0; i < 12; i++) {
+        somaVendas.push(vendas2021[i] + vendas2022[i]);
+      }
+
+     
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "";
+
+      for (var i = 0; i < 12; i++) {
+        resultado.innerHTML += "Mês " + (i + 1) + ": " + somaVendas[i] + "<br>";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Soma de Vendas Mensais</h1>
+
+  <h2>Ano 2021</h2>
+  <p>Informe as vendas de cada mês:</p>
+
+  <div id="vendas2021">
+    <input type="number" id="venda2021-0" placeholder="Janeiro"><br>
+    <input type="number" id="venda2021-1" placeholder="Fevereiro"><br>
+    <input type="number" id="venda2021-2" placeholder="Março"><br>
+    <input type="number" id="venda2021-3" placeholder="Abril"><br>
+    <input type="number" id="venda2021-4" placeholder="Maio"><br>
+    <input type="number" id="venda2021-5" placeholder="Junho"><br>
+    <input type="number" id="venda2021-6" placeholder="Julho"><br>
+    <input type="number" id="venda2021-7" placeholder="Agosto"><br>
+    <input type="number" id="venda2021-8" placeholder="Setembro"><br>
+    <input type="number" id="venda2021-9" placeholder="Outubro"><br>
+    <input type="number" id="venda2021-10" placeholder="Novembro"><br>
+    <input type="number" id="venda2021-11" placeholder="Dezembro"><br>
+  </div>
+
+  <h2>Ano 2022</h2>
+  <p>Informe as vendas de cada mês:</p>
+
+  <div id="vendas2022">
+    <input type="number" id="venda2022-0" placeholder="Janeiro"><br>
+    <input type="number" id="venda2022-1" placeholder="Fevereiro"><br>
+    <input type="number" id="venda2022-2" placeholder="Março"><br>
+    <input type="number" id="venda2022-3" placeholder="Abril"><br>
+    <input type="number" id="venda2022-4" placeholder="Maio"><br>
+    <input type="number" id="venda2022-5" placeholder="Junho"><br>
+    <input type="number" id="venda2022-6" placeholder="Julho"><br>
+    <input type="number" id="venda2022-7" placeholder="Agosto"><br>
+    <input type="number" id="venda2022-8" placeholder="Setembro"><br>
+    <input type="number" id="venda2022-9" placeholder="Outubro"><br>
+    <input type="number" id="venda2022-10" placeholder="Novembro"><br>
+    <input type="number" id="venda2022-11" placeholder="Dezembro"><br>
+  </div>
+
+  <button onclick="calcularSoma()">Calcular Soma</button>
+
+  <h2>Resultado</h2>
+  <p id="resultado"></p>
+</body>
+</html>

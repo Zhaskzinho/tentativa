@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+    <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  var valorPago = prompt("Digite o valor pago:");
+  var descontoPorcentagem = prompt("Digite o valor do desconto (%):");
+
+  var desconto = (descontoPorcentagem / 100) * valorPago;
+  var valorComDesconto = valorPago - desconto;
+
+  document.write("Valor com desconto: " + valorComDesconto);
+</script>
+
+</body>
+</html>

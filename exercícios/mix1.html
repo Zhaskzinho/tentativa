@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Cálculo de Salário</h1>
+  <label for="salarioFixoInput">Salário Fixo: </label>
+  <input type="number" id="salarioFixoInput"><br>
+
+  <label for="valorVendasInput">Valor das Vendas: </label>
+  <input type="number" id="valorVendasInput"><br>
+
+  <button onclick="calcularSalarioFinal()">Calcular Salário</button>
+
+  <h2>Resultados:</h2>
+  <p id="comissao"></p>
+  <p id="salarioFinal"></p>
+
+  <script>
+    function calcularSalarioFinal() {
+      var salarioFixoInput = document.getElementById("salarioFixoInput");
+      var valorVendasInput = document.getElementById("valorVendasInput");
+
+      var salarioFixo = parseFloat(salarioFixoInput.value);
+      var valorVendas = parseFloat(valorVendasInput.value);
+
+      if (isNaN(salarioFixo) || isNaN(valorVendas)) {
+        alert("Por favor, insira valores numéricos válidos!");
+        return;
+      }
+
+      var comissao = valorVendas * 0.04;
+      var salarioFinal = salarioFixo + comissao;
+
+      exibirResultados(comissao, salarioFinal);
+    }
+
+    function exibirResultados(comissao, salarioFinal) {
+      var comissaoElement = document.getElementById("comissao");
+      var salarioFinalElement = document.getElementById("salarioFinal");
+
+      comissaoElement.textContent = "Comissão: R$" + comissao.toFixed(2);
+      salarioFinalElement.textContent = "Salário Final: R$" + salarioFinal.toFixed(2);
+    }
+  </script>
+</body>
+</html>

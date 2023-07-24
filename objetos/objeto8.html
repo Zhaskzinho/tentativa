@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+  <h1>Receitas</h1>
+  
+  <div id="resultado"></div>
+
+  <script>
+   
+    var receitas = [
+      {
+        nome: "Bolo de Chocolate",
+        ingredientes: ["Farinha de trigo", "Açúcar", "Ovo", "Cacau em pó", "Leite", "Óleo vegetal"],
+        tempoPreparo: 60
+      },
+      {
+        nome: "Salada Caprese",
+        ingredientes: ["Tomate", "Mozzarella", "Manjericão", "Azeite de oliva", "Sal", "Pimenta"],
+        tempoPreparo: 15
+      },
+      {
+        nome: "Sopa de Legumes",
+        ingredientes: ["Cenoura", "Batata", "Abobrinha", "Cebola", "Alho", "Caldo de legumes", "Água"],
+        tempoPreparo: 30
+      }
+    ];
+
+   
+    var resultadoDiv = document.getElementById("resultado");
+
+    for (var i = 0; i < receitas.length; i++) {
+      var receita = receitas[i];
+      var infoReceita = "Receita: " + receita.nome + "<br>Ingredientes: " + receita.ingredientes.join(", ") + "<br>Tempo de Preparo: " + receita.tempoPreparo + " minutos";
+      var infoReceitaElement = document.createElement("p");
+      infoReceitaElement.innerHTML = infoReceita;
+      resultadoDiv.appendChild(infoReceitaElement);
+    }
+  </script>
+</body>
+</html>

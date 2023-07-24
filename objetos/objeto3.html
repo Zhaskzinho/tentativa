@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+  
+  <title>Document</title>
+</head>
+<body>
+  <h1>Atualizar Estoque</h1>
+  
+  <p id="resultado"></p>
+
+  <script>
+   
+    var estoque = {
+      produto: "Camiseta",
+      quantidadeDisponivel: 10,
+      atualizarEstoque: function(nomeProduto, quantidadeAdicionar) {
+        if (nomeProduto === this.produto) {
+          this.quantidadeDisponivel += quantidadeAdicionar;
+          return "Estoque atualizado. Nova quantidade disponível de " + this.produto + ": " + this.quantidadeDisponivel;
+        } else {
+          return "Produto não encontrado no estoque.";
+        }
+      }
+    };
+    
+   
+    function atualizarEstoque(nomeProduto, quantidadeAdicionar) {
+      var resultado = estoque.atualizarEstoque(nomeProduto, quantidadeAdicionar);
+      document.getElementById("resultado").textContent = resultado;
+    }
+    
+   
+    atualizarEstoque("Camiseta", 5);
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+    <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  var valorMilimetros = prompt("Digite um valor em milímetros:");
+
+  var valorCentimetros = valorMilimetros / 10;
+  var valorDecimetros = valorMilimetros / 100;
+  var valorMetros = valorMilimetros / 1000;
+  var valorDecametros = valorMilimetros / 10000;
+  var valorHectometros = valorMilimetros / 100000;
+  var valorQuilometros = valorMilimetros / 1000000;
+
+  document.write("Valor em milímetros: " + valorMilimetros + "<br>");
+  document.write("Valor em centímetros: " + valorCentimetros + "<br>");
+  document.write("Valor em decímetros: " + valorDecimetros + "<br>");
+  document.write("Valor em metros: " + valorMetros + "<br>");
+  document.write("Valor em decâmetros: " + valorDecametros + "<br>");
+  document.write("Valor em hectômetros: " + valorHectometros + "<br>");
+  document.write("Valor em quilômetros: " + valorQuilometros + "<br>");
+</script>
+
+</body>
+</html>

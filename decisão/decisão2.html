@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Verificação de Múltiplo</h1>
+  <label for="numero1">Número 1:</label>
+  <input type="number" id="numero1" step="1"><br>
+  <label for="numero2">Número 2:</label>
+  <input type="number" id="numero2" step="1"><br>
+  <button onclick="verificarMultiplo()">Verificar Múltiplo</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificarMultiplo() {
+      var numero1 = parseInt(document.getElementById("numero1").value);
+      var numero2 = parseInt(document.getElementById("numero2").value);
+
+      var resultadoElement = document.getElementById("resultado");
+
+      if (numero1 % numero2 === 0) {
+        resultadoElement.innerHTML = numero1 + " é múltiplo de " + numero2;
+      } else {
+        resultadoElement.innerHTML = numero1 + " não é múltiplo de " + numero2;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+    <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+  <script>
+    function calcularHipotenusa() {
+     
+      var anguloRadianos = parseFloat(document.getElementById("angulo_radianos").value);
+      var catetoAdjacente = parseFloat(document.getElementById("cateto_adjacente").value);
+
+      
+      var hipotenusa = catetoAdjacente / Math.cos(anguloRadianos);
+
+     
+      document.getElementById("resultado").innerHTML = "A hipotenusa é: " + hipotenusa;
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora de Hipotenusa</h1>
+
+  <label for="angulo_radianos">Ângulo em radianos:</label>
+  <input type="number" id="angulo_radianos" />
+
+  <label for="cateto_adjacente">Cateto Adjacente:</label>
+  <input type="number" id="cateto_adjacente" />
+
+  <button onclick="calcularHipotenusa()">Calcular</button>
+
+  <p id="resultado"></p>
+</body>
+</html>

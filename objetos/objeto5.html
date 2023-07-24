@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+  <h1>Quantidade Total em Estoque</h1>
+  
+  <p id="resultado"></p>
+
+  <script>
+   
+    var estoque = {
+      produto1: {
+        nome: "Camiseta",
+        quantidade: 10
+      },
+      produto2: {
+        nome: "Calça",
+        quantidade: 15
+      },
+      produto3: {
+        nome: "Sapato",
+        quantidade: 20
+      },
+      produto4: {
+        nome: "Boné",
+        quantidade: 5
+      },
+      quantidadeTotalEmEstoque: function() {
+        var quantidadeTotal = 0;
+        for (var produto in this) {
+          if (this[produto].quantidade) {
+            quantidadeTotal += this[produto].quantidade;
+          }
+        }
+        return quantidadeTotal;
+      }
+    };
+    
+ 
+    function retornarQuantidadeTotalEmEstoque() {
+      var quantidadeTotal = estoque.quantidadeTotalEmEstoque();
+      document.getElementById("resultado").textContent = "Quantidade total em estoque: " + quantidadeTotal;
+    }
+    
+   
+    retornarQuantidadeTotalEmEstoque();
+  </script>
+</body>
+</html>

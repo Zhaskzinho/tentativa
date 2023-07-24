@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+    <a href="../index.html">Home<br></a>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Análise de Números</h1>
+  <label for="numeroInput">Insira um número:</label>
+  <input type="number" id="numeroInput">
+  <button onclick="adicionarNumero()">Adicionar Número</button>
+
+  <h2>Resultados:</h2>
+  <p id="positivos">Números positivos: </p>
+  <p id="negativos">Números negativos: </p>
+  <p id="zeros">Números zeros: </p>
+
+  <script>
+    var numeros = [];
+    var positivosCount = 0;
+    var negativosCount = 0;
+    var zerosCount = 0;
+
+    function adicionarNumero() {
+      var numeroInput = document.getElementById("numeroInput");
+      var numero = parseInt(numeroInput.value);
+
+      if (isNaN(numero)) {
+        alert("Por favor, insira um número válido!");
+        return;
+      }
+
+      numeros.push(numero);
+      numeroInput.value = "";
+
+      verificarNumeros();
+    }
+
+    function verificarNumeros() {
+      positivosCount = 0;
+      negativosCount = 0;
+      zerosCount = 0;
+
+      for (var i = 0; i < numeros.length; i++) {
+        var numero = numeros[i];
+
+        if (numero > 0) {
+          positivosCount++;
+        } else if (numero < 0) {
+          negativosCount++;
+        } else {
+          zerosCount++;
+        }
+      }
+
+      exibirResultados();
+    }
+
+    function exibirResultados() {
+      var positivosElement = document.getElementById("positivos");
+      var negativosElement = document.getElementById("negativos");
+      var zerosElement = document.getElementById("zeros");
+
+      positivosElement.textContent = "Números positivos: " + positivosCount;
+      negativosElement.textContent = "Números negativos: " + negativosCount;
+      zerosElement.textContent = "Números zeros: " + zerosCount;
+    }
+  </script>
+</body>
+</html>

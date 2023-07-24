@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+  <h1>Multiplicação</h1>
+  <p id="resultado"></p>
+
+  <script>
+    function multiplicar(valor1, valor2, valor3) {
+      var resultado = valor1 * valor2 * valor3;
+      var valores = "Valores: " + valor1 + ", " + valor2 + " e " + valor3;
+      document.getElementById("resultado").innerHTML = valores + "<br>O resultado da multiplicação é: " + resultado;
+    }
+
+    multiplicar(2, 3, 4);
+  </script>
+</body>
+</html>

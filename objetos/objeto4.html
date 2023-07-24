@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+  
+  <title>Document</title>
+</head>
+<body>
+  <h1>Remover do Estoque</h1>
+  
+  <p id="resultado"></p>
+
+  <script>
+  
+    var estoque = {
+      produto: "Camiseta",
+      quantidadeDisponivel: 10,
+      removerDoEstoque: function(nomeProduto, quantidadeRemover) {
+        if (nomeProduto === this.produto) {
+          if (quantidadeRemover <= this.quantidadeDisponivel) {
+            this.quantidadeDisponivel -= quantidadeRemover;
+            return "Estoque atualizado. Nova quantidade disponível de " + this.produto + ": " + this.quantidadeDisponivel;
+          } else {
+            return "Quantidade solicitada excede a quantidade disponível em estoque.";
+          }
+        } else {
+          return "Produto não encontrado no estoque.";
+        }
+      }
+    };
+    
+  
+    function removerDoEstoque(nomeProduto, quantidadeRemover) {
+      var resultado = estoque.removerDoEstoque(nomeProduto, quantidadeRemover);
+      document.getElementById("resultado").textContent = resultado;
+    }
+    
+   
+    removerDoEstoque("Camiseta", 5);
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+  <script>
+    function exibirNotas() {
+      
+      var notas = [];
+
+      
+      for (var i = 0; i < 10; i++) {
+        var nota = prompt("Digite a nota do aluno " + (i + 1) + ":");
+        notas.push(parseFloat(nota));
+      }
+
+     
+      var notasElement = document.getElementById("notas");
+      notasElement.textContent = "Notas dos Alunos: " + notas.join(", ");
+    }
+  </script>
+</head>
+<body>
+  <h1>Notas dos Alunos</h1>
+
+  <button onclick="exibirNotas()">Exibir Notas</button>
+
+  <p id="notas"></p>
+</body>
+</html>

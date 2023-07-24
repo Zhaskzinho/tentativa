@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Soma de Números</h1>
+  <p>Informe os números (digite -1 para sair):</p>
+  <input type="number" id="numeroInput">
+  <button onclick="calcularSoma()">Adicionar</button>
+  <p id="resultado"></p>
+
+  <script>
+    var numeros = [];
+
+    function calcularSoma() {
+      var numeroInput = document.getElementById("numeroInput");
+      var numero = parseInt(numeroInput.value);
+
+      if (numero === -1) {
+        var soma = calcularSomaTotal();
+        exibirResultado(soma);
+      } else {
+        numeros.push(numero);
+        numeroInput.value = "";
+      }
+    }
+
+    function calcularSomaTotal() {
+      var soma = 0;
+      for (var i = 0; i < numeros.length; i++) {
+        soma += numeros[i];
+      }
+      return soma;
+    }
+
+    function exibirResultado(soma) {
+      var resultadoElement = document.getElementById("resultado");
+      resultadoElement.innerHTML = "A soma dos números é: " + soma;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <a href="../index.html">Home<br></a>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var primeira = prompt("Digite o valor da primeira variável:");
+        var segunda = prompt("Digite o valor da segunda variável:");
+
+        document.write("Valores originais:<br><br>");
+        document.write("PRIMEIRA: " + primeira + "<br>");
+        document.write("SEGUNDA: " + segunda + "<br><br>");
+
+        var temp = primeira;
+        primeira = segunda;
+        segunda = temp;
+
+        document.write("Valores trocados:<br><br>");
+        document.write("PRIMEIRA: " + primeira + "<br>");
+        document.write("SEGUNDA: " + segunda + "<br>");
+    </script>
+</body>
+</html>

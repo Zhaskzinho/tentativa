@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+  
+  <title>Document</title>
+</head>
+<body>
+  <h1>Catálogo de Produtos</h1>
+  
+  <div id="resultado"></div>
+
+  <script>
+   
+    var catalogoProdutos = [
+      { id: 1, nome: "Produto 1", preco: 10.99 },
+      { id: 2, nome: "Produto 2", preco: 19.99 },
+      { id: 3, nome: "Produto 3", preco: 5.99 }
+    ];
+
+  
+    var resultadoDiv = document.getElementById("resultado");
+
+    for (var i = 0; i < catalogoProdutos.length; i++) {
+      var produto = catalogoProdutos[i];
+      var infoProduto = "ID: " + produto.id + ", Nome: " + produto.nome + ", Preço: $" + produto.preco.toFixed(2);
+      var infoProdutoElement = document.createElement("p");
+      infoProdutoElement.textContent = infoProduto;
+      resultadoDiv.appendChild(infoProdutoElement);
+    }
+  </script>
+</body>
+</html>

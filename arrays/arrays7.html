@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+    
+  <title>Document</title>
+  <script>
+    function calcularMedia() {
+      var notas = [];
+
+      
+      for (var i = 0; i < 10; i++) {
+        var nota = prompt("Digite a nota do aluno " + (i + 1) + ":");
+        notas.push(parseFloat(nota));
+      }
+
+     
+      var soma = 0;
+      for (var i = 0; i < notas.length; i++) {
+        soma += notas[i];
+      }
+      var media = soma / notas.length;
+
+     
+      var resultado = document.getElementById("resultado");
+      resultado.textContent = "A média das notas é: " + media.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Cálculo da Média das Notas</h1>
+
+  <button onclick="calcularMedia()">Calcular Média</button>
+
+  <p id="resultado"></p>
+</body>
+</html>

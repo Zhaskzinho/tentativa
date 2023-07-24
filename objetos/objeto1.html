@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <a href="../index.html">Home<br></a>
+
+  <title>Document</title>
+</head>
+<body>
+  <h1>Objeto de Livro</h1>
+  
+  <p id="resultado"></p>
+
+  <script>
+  
+    var livro = {
+      título: "Dom Casmurro",
+      autor: "Machado de Assis",
+      anoLançamento: 1899
+    };
+    
+
+    livro.gênero = "Romance";
+    
+   
+    document.getElementById("resultado").textContent = "Livro: " + livro.título + " - Autor: " + livro.autor + " - Ano de Lançamento: " + livro.anoLançamento + " - Gênero: " + livro.gênero;
+  </script>
+</body>
+</html>
